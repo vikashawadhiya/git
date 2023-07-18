@@ -2271,7 +2271,7 @@ test_expect_success 'check-attr with pathspec inside sparse definition' '
 	test_all_match git check-attr -a --cached -- deep/a
 '
 
-test_expect_failure 'check-attr with pathspec outside sparse definition' '
+test_expect_success 'check-attr with pathspec outside sparse definition' '
 	init_repos &&
 
 	echo "a -crlf myAttr" >>.gitattributes &&
@@ -2288,7 +2288,7 @@ test_expect_failure 'check-attr with pathspec outside sparse definition' '
 	test_all_match git check-attr  -a --cached -- folder1/a
 '
 
-test_expect_failure 'diff --check with pathspec outside sparse definition' '
+test_expect_success 'diff --check with pathspec outside sparse definition' '
 	init_repos &&
 
 	write_script edit-contents <<-\EOF &&
